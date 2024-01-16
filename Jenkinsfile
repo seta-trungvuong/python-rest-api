@@ -6,7 +6,7 @@ pipeline {
     ENV = "dev"
     // read config credentials dockerhub
     DOCKER_REGISTRY= "tvuong"
-    DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+    DOCKERHUB_CREDENTIALS = credentials('dockerhub-tvuong')
     REPO = "python-rest-api"
     TAG = sh(returnStdout: true, script: "git rev-parse -short=10 HEAD | tail -n +2").trim()
   }
