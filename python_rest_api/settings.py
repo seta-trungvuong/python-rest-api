@@ -29,7 +29,8 @@ ALLOWED_HOSTS = ["*"]
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost",
     "http://127.0.0.1",
-    "https://team5-nodejs.devops4all.co",
+    "https://team5-python.devops4all.co",
+    "https://devops4all.co ",
 ]
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
