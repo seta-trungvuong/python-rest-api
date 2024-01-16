@@ -25,7 +25,8 @@ SECRET_KEY = "django-insecure-nk$u26jy$9wiu2!v^etqa(dth0m^mxrn&0m*o(c#k^z8(+@@$6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "https://team5-nodejs.devops4all.co"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost", "http://127.0.0.1", "https://team5-nodejs.devops4all.co"]
 
 
 # Application definition
@@ -133,6 +134,11 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
+    ],
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 10,
 }
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
