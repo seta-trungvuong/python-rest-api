@@ -19,8 +19,8 @@ ADD . /app_src/
 
 VOLUME /app_src
 
-EXPOSE 8001
+EXPOSE 8000
 
-CMD python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8001
+CMD python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000
 # CMD ["%%CMD%%"]
-# docker run -d -p 8001:8001  -v src:/app_src --name django_drf_app django_drf
+# docker run -d -p 8000:8000  -v src:/app_src --name django_drf_app python-rest-api

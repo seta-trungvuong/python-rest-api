@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent { 
+    node {label 'build'} 
+  }
   environment {
     ENV = "dev"
     // read config credentials dockerhub
